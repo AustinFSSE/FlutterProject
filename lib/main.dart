@@ -1,4 +1,4 @@
-import 'package:dadsapp/home.dart';
+import 'package:dadsapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
