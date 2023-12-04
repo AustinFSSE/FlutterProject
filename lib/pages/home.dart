@@ -6,8 +6,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 48, 58, 148),
+      backgroundColor: const Color.fromARGB(255, 48, 58, 148),
       appBar: appBar(),
+      body: ListView(
+        children: <Widget>[
+          _searchField(),
+          const SizedBox(
+            height: 40,
+          )
+        ],
+      ),
     );
   }
 
@@ -29,8 +37,8 @@ class HomePage extends StatelessWidget {
       actions: <Widget>[
         ElevatedButton(
           onPressed: () {},
-          child: Text('Get a Quote'),
           style: ElevatedButton.styleFrom(foregroundColor: Colors.orange, backgroundColor: const Color.fromARGB(255, 238, 238, 238), padding: const EdgeInsets.all(10.0)),
+          child: Text('Get a Quote'),
         ),
         IconButton(
           color: Color.fromARGB(255, 48, 58, 148),
@@ -58,6 +66,22 @@ class HomePage extends StatelessWidget {
                   )
                 ]),
       ],
+    );
+  }
+
+  Container _searchField() {
+    return Container(
+      margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+      decoration: BoxDecoration(boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.20), blurRadius: 20, spreadRadius: 0.0)]),
+      child: TextField(
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.all(15),
+          hintText: 'Looking for a specific company?',
+          hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
+        ),
+      ),
     );
   }
 }
