@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:Constructionapp/pages/customer_support.dart';
 import 'package:Constructionapp/pages/login_page.dart';
 import 'package:Constructionapp/pages/get_a_quote.dart';
@@ -37,6 +39,14 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      body: ListView(
+        children: [
+          _searchField(),
+          const SizedBox(
+            height: 40,
+          )
+        ],
+      ),
     );
   }
 
@@ -59,4 +69,24 @@ class HomePage extends StatelessWidget {
         break;
     }
   }
+}
+
+Container _searchField() {
+  return Container(
+    margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 0.0)]),
+    child: TextField(
+      decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: const EdgeInsets.all(8),
+          hintText: 'Search for services & More',
+          hintStyle: const TextStyle(color: Color(0xffDDDADA), fontSize: 14),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(1),
+            child: IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          ),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none)),
+    ),
+  );
 }
