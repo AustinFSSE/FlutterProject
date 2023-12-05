@@ -82,19 +82,20 @@ class HomePage extends StatelessWidget {
 Container _searchField() {
   return Container(
     margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
-    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
+    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.25), blurRadius: 20, spreadRadius: 5.0)]),
     child: TextField(
       decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: const EdgeInsets.all(8),
-          hintText: 'Search for services & More',
-          hintStyle: const TextStyle(color: Color(0xffDDDADA), fontSize: 14),
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(1),
-            child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          ),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none)),
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: const EdgeInsets.all(8),
+        hintText: 'Search for services & More',
+        hintStyle: const TextStyle(color: Color(0xffDDDADA), fontSize: 14),
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(1),
+          child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide(color: Colors.black)),
+      ),
     ),
   );
 }
@@ -102,16 +103,34 @@ Container _searchField() {
 Container _locationValidation() {
   return Container(
     decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
-    child: const Column(
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 20),
           child: Text(
             'Enter your Address that needs Service',
             style: TextStyle(
               color: Color.fromARGB(255, 129, 128, 128),
             ),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(
+            left: 20,
+            right: 20,
+          ),
+          decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
+          child: TextField(
+            decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.transparent,
+                contentPadding: const EdgeInsets.all(8),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(1),
+                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+                ),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide(style: BorderStyle.solid, color: Colors.black))),
           ),
         ),
       ],
@@ -193,20 +212,6 @@ Column _services() {
                   ),
                 ),
                 const Text('Electrical')
-              ],
-            ),
-            Column(
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset('assets/icons/roofing.svg'),
-                  ),
-                ),
-                const Text('General')
               ],
             ),
           ],
