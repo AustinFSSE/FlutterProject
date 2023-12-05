@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.deepOrange[400],
         elevation: 0,
         title: const Text('Contracting, USA'),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         actions: <Widget>[
           IconButton(
               onPressed: () {
@@ -44,7 +45,15 @@ class HomePage extends StatelessWidget {
           _searchField(),
           const SizedBox(
             height: 40,
-          )
+          ),
+          _locationValidation(),
+          const SizedBox(
+            height: 40,
+          ),
+          _services(),
+          const SizedBox(
+            height: 40,
+          ),
         ],
       ),
     );
@@ -59,12 +68,12 @@ class HomePage extends StatelessWidget {
         break;
       case 1:
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => Login()),
+          MaterialPageRoute(builder: (context) => const Login()),
         );
         break;
       case 2:
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => CustomerSupport()),
+          MaterialPageRoute(builder: (context) => const CustomerSupport()),
         );
         break;
     }
@@ -73,8 +82,8 @@ class HomePage extends StatelessWidget {
 
 Container _searchField() {
   return Container(
-    margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 0.0)]),
+    margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
+    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
     child: TextField(
       decoration: InputDecoration(
           filled: true,
@@ -84,9 +93,23 @@ Container _searchField() {
           hintStyle: const TextStyle(color: Color(0xffDDDADA), fontSize: 14),
           prefixIcon: Padding(
             padding: const EdgeInsets.all(1),
-            child: IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           ),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none)),
+    ),
+  );
+}
+
+Container _locationValidation() {
+  return Container();
+}
+
+Container _services() {
+  return Container(
+    margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
+    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
+    child: const Row(
+      children: [],
     ),
   );
 }

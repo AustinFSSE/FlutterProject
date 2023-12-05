@@ -7,7 +7,8 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create an Account'),
+        title: const Text('Create an Account'),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         backgroundColor: Colors.green,
         centerTitle: true,
       ),
