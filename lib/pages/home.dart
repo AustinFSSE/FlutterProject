@@ -43,15 +43,19 @@ class HomePage extends StatelessWidget {
         children: [
           _searchField(),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           _locationValidation(),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           _services(),
           const SizedBox(
-            height: 40,
+            height: 10,
+          ),
+          _generalservices(),
+          const SizedBox(
+            height: 10,
           ),
         ],
       ),
@@ -217,6 +221,18 @@ Column _services() {
           ],
         ),
       )
+    ],
+  );
+}
+
+Container _generalservices() {
+  return Container(
+    children: [
+      Text(
+        'General Services',
+        textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
+      ),
     ],
   );
 }
