@@ -43,11 +43,11 @@ class HomePage extends StatelessWidget {
         children: [
           _searchField(),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           _locationValidation(),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           _services(),
           const SizedBox(
@@ -100,7 +100,23 @@ Container _searchField() {
 }
 
 Container _locationValidation() {
-  return Container();
+  return Container(
+    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
+    child: const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            'Enter your Address that needs Service',
+            style: TextStyle(
+              color: Color.fromARGB(255, 129, 128, 128),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 Column _services() {
@@ -118,24 +134,80 @@ Column _services() {
         height: 15,
       ),
       Container(
+        margin: EdgeInsets.only(left: 20, right: 20),
         height: 125,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
-              children: [Text('HVAC'), SvgPicture.asset('assets/icons/HVAC.svg')],
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/icons/HVAC.svg'),
+                  ),
+                ),
+                const Text('HVAC')
+              ],
             ),
             Column(
-              children: [Text('Plumbing'), SvgPicture.asset('assets')],
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/icons/plumbing.svg'),
+                  ),
+                ),
+                const Text('Plumbing')
+              ],
             ),
             Column(
-              children: [Text('Roofing'), SvgPicture.asset('assets/icons/roofing.svg')],
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/icons/roofing.svg'),
+                  ),
+                ),
+                const Text('Roofing')
+              ],
             ),
             Column(
-              children: [Text('Electrical'), SvgPicture.asset('assets/icons/electrical.svg')],
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/icons/electrical.svg'),
+                  ),
+                ),
+                const Text('Electrical')
+              ],
             ),
             Column(
-              children: [Text('General')],
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/icons/roofing.svg'),
+                  ),
+                ),
+                const Text('General')
+              ],
             ),
           ],
         ),
