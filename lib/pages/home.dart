@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:Constructionapp/pages/customer_support.dart';
 import 'package:Constructionapp/pages/login_page.dart';
 import 'package:Constructionapp/pages/get_a_quote.dart';
@@ -82,7 +81,7 @@ class HomePage extends StatelessWidget {
 
 Container _searchField() {
   return Container(
-    margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
+    margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
     decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
     child: TextField(
       decoration: InputDecoration(
@@ -104,12 +103,43 @@ Container _locationValidation() {
   return Container();
 }
 
-Container _services() {
-  return Container(
-    margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
-    child: const Row(
-      children: [],
-    ),
+Column _services() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: Text(
+          'Services',
+          style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      ),
+      const SizedBox(
+        height: 15,
+      ),
+      Container(
+        height: 125,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: [Text('HVAC'), SvgPicture.asset('assets/icons/HVAC.svg')],
+            ),
+            Column(
+              children: [Text('Plumbing'), SvgPicture.asset('assets')],
+            ),
+            Column(
+              children: [Text('Roofing'), SvgPicture.asset('assets/icons/roofing.svg')],
+            ),
+            Column(
+              children: [Text('Electrical'), SvgPicture.asset('assets/icons/electrical.svg')],
+            ),
+            Column(
+              children: [Text('General')],
+            ),
+          ],
+        ),
+      )
+    ],
   );
 }
