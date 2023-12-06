@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GetQuote extends StatelessWidget {
+  const GetQuote({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

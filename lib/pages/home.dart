@@ -1,7 +1,7 @@
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:Constructionapp/pages/customer_support.dart';
-import 'package:Constructionapp/pages/login_page.dart';
-import 'package:Constructionapp/pages/get_a_quote.dart';
+import 'package:constructionapp/pages/customer_support.dart';
+import 'package:constructionapp/pages/login_page.dart';
+import 'package:constructionapp/pages/get_a_quote.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
     switch (item) {
       case 0:
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => GetQuote()),
+          MaterialPageRoute(builder: (context) => const GetQuote()),
         );
         break;
       case 1:
@@ -98,7 +98,7 @@ Container _searchField() {
           padding: const EdgeInsets.all(1),
           child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
         ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide(color: Colors.black)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: const BorderSide(color: Colors.black)),
       ),
     ),
   );
@@ -134,7 +134,7 @@ Container _locationValidation() {
                   padding: const EdgeInsets.all(1),
                   child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
                 ),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide(style: BorderStyle.solid, color: Colors.black))),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: const BorderSide(style: BorderStyle.solid, color: Colors.black))),
           ),
         ),
       ],
@@ -157,7 +157,7 @@ Column _services() {
         height: 15,
       ),
       Container(
-        margin: EdgeInsets.only(left: 20, right: 20),
+        margin: const EdgeInsets.only(left: 20, right: 20),
         height: 125,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -167,7 +167,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/HVAC.svg'),
@@ -181,7 +181,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/plumbing.svg'),
@@ -195,7 +195,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/roofing.svg'),

@@ -1,4 +1,4 @@
-import 'package:Constructionapp/pages/home.dart';
+import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

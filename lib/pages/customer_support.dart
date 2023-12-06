@@ -7,7 +7,7 @@ class CustomerSupport extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Support Page'),
+        title: const Text('Support Page'),
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         backgroundColor: Colors.deepPurple,
         centerTitle: true,
