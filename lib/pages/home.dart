@@ -225,12 +225,10 @@ Column _services() {
   );
 }
 
-Container _generalservices() {
-  return Container(
-    child: const Text(
-      'General Services',
-      textAlign: TextAlign.center,
-      style: TextStyle(fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
-    ),
+Text _generalservices() {
+  return const Text(
+    'General Services',
+    textAlign: TextAlign.center,
+    style: TextStyle(fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
   );
 }
