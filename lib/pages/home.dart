@@ -120,7 +120,7 @@ Container _locationValidation() {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
             left: 20,
             right: 20,
           ),
@@ -227,12 +227,10 @@ Column _services() {
 
 Container _generalservices() {
   return Container(
-    children: [
-      Text(
-        'General Services',
-        textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
-      ),
-    ],
+    child: const Text(
+      'General Services',
+      textAlign: TextAlign.center,
+      style: TextStyle(fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
+    ),
   );
 }
