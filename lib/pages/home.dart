@@ -209,7 +209,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/electrical.svg'),
