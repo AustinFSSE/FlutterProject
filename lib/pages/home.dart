@@ -84,6 +84,10 @@ class HomePage extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const CustomerSupport()),
         );
         break;
+      case 3:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const FormScreen()),
+        );
     }
   }
 }
