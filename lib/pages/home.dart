@@ -13,7 +13,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepOrange[400],
-        elevation: 0,
+        shadowColor: Colors.black,
+        elevation: 4,
         title: const Text('Contracting, USA'),
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         actions: <Widget>[
@@ -61,7 +62,6 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          FormScreen(),
         ],
       ),
     );
