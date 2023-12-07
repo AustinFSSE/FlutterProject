@@ -2,6 +2,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:constructionapp/pages/customer_support.dart';
 import 'package:constructionapp/pages/login_page.dart';
 import 'package:constructionapp/pages/get_a_quote.dart';
+import 'package:constructionapp/pages/forms_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,7 +25,10 @@ class HomePage extends StatelessWidget {
           PopupMenuButton(
             onSelected: (item) => onSelected(context, item),
             itemBuilder: (context) => [
-              const PopupMenuItem(value: 0, child: Text('Get a Quote')),
+              const PopupMenuItem(
+                value: 0,
+                child: Text('Get a Quote'),
+              ),
               const PopupMenuItem(
                 value: 1,
                 child: Text('Create an Account'),
@@ -34,6 +38,10 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   'Having an Issue?',
                 ),
+              ),
+              const PopupMenuItem(
+                value: 3,
+                child: Text('Form'),
               )
             ],
           ),
@@ -45,10 +53,6 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          _locationValidation(),
-          const SizedBox(
-            height: 10,
-          ),
           _services(),
           const SizedBox(
             height: 10,
@@ -57,6 +61,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          FormScreen(),
         ],
       ),
     );
@@ -86,7 +91,7 @@ class HomePage extends StatelessWidget {
 Container _searchField() {
   return Container(
     margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
-    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.25), blurRadius: 20, spreadRadius: 5.0)]),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.5), spreadRadius: 1)]),
     child: TextField(
       decoration: InputDecoration(
         filled: true,
@@ -105,8 +110,8 @@ Container _searchField() {
 }
 
 Container _locationValidation() {
+  // ignore: avoid_unnecessary_containers
   return Container(
-    decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -124,7 +129,6 @@ Container _locationValidation() {
             left: 20,
             right: 20,
           ),
-          decoration: BoxDecoration(boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.11), blurRadius: 40, spreadRadius: 5.0)]),
           child: TextField(
             decoration: InputDecoration(
                 filled: true,
@@ -147,7 +151,7 @@ Column _services() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       const Padding(
-        padding: EdgeInsets.only(left: 20),
+        padding: EdgeInsets.only(left: 20, top: 25),
         child: Text(
           'Services',
           style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
@@ -156,8 +160,9 @@ Column _services() {
       const SizedBox(
         height: 15,
       ),
+      _locationValidation(),
       Container(
-        margin: const EdgeInsets.only(left: 20, right: 20),
+        margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
         height: 125,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -167,7 +172,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/HVAC.svg'),
@@ -181,7 +186,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/plumbing.svg'),
@@ -195,7 +200,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/roofing.svg'),
@@ -209,7 +214,7 @@ Column _services() {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SvgPicture.asset('assets/icons/electrical.svg'),
@@ -225,10 +230,14 @@ Column _services() {
   );
 }
 
-Text _generalservices() {
-  return const Text(
-    'General Services',
-    textAlign: TextAlign.center,
-    style: TextStyle(fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
+Container _generalservices() {
+  return Container(
+    margin: const EdgeInsets.only(left: 20, right: 20),
+    child: const Row(children: [
+      Text(
+        'General Services',
+        style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
+      ),
+    ]),
   );
 }

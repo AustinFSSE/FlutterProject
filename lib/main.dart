@@ -1,8 +1,9 @@
+import 'package:constructionapp/pages/forms_screen.dart';
 import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: const HomePage(),
+      home: const FormScreen(),
     );
   }
 }
