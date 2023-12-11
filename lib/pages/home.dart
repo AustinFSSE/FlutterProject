@@ -44,50 +44,78 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          _searchField(),
-          const SizedBox(
-            height: 10,
-          ),
-          _services(),
-          const SizedBox(
-            height: 10,
-          ),
-          Container(
-            margin: const EdgeInsets.only(left: 20, right: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Not sure which service you need?',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const FormScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepOrange[400],
-                    foregroundColor: Colors.black,
-                    elevation: 8,
-                  ),
-                  child: const Text(
-                    'Describe it to us!',
-                    style: TextStyle(fontFamily: 'Poppins', fontStyle: FontStyle.italic),
-                  ),
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _searchField(),
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-        ],
+            _services(),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: [
+                  const Text(
+                    'Not sure which service you need?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const FormScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepOrange[400],
+                      foregroundColor: Colors.black,
+                      elevation: 8,
+                    ),
+                    child: const Text(
+                      'Describe it to us!',
+                      style: TextStyle(fontFamily: 'Poppins', fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+              child: const Text(
+                'Follow these steps to complete your request',
+                style: TextStyle(fontFamily: 'Poppins', fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+              child: Stepper(
+                steps: const [
+                  Step(
+                    title: Text('Enter your First & Last Name'),
+                    content: Text('Select a service you need'),
+                  ),
+                  Step(
+                    title: Text('Contact Information \n(please mark the best way to contact you)'),
+                    content: Text('Select a service you need'),
+                  ),
+                  Step(
+                    title: Text('Submit any photos in regards to the situation'),
+                    content: Text('Select a service you need'),
+                  ),
+                  Step(
+                    title: Text('Describe your situation and what you need done'),
+                    content: Text('Select a service you need'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -180,7 +208,7 @@ Column _services() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       const Padding(
-        padding: EdgeInsets.only(left: 20, top: 25),
+        padding: EdgeInsets.only(left: 20, top: 10),
         child: Text(
           'Services',
           style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
@@ -257,4 +285,40 @@ Column _services() {
       )
     ],
   );
+}
+
+class GetStep extends StatefulWidget {
+  const GetStep({super.key});
+
+  @override
+  State<GetStep> createState() => _GetStepState();
+}
+
+class _GetStepState extends State<GetStep> {
+  int currentStep = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stepper(
+        steps: const [
+          Step(
+            title: Text('Enter your First & Last Name'),
+            content: Text('Select a service you need'),
+          ),
+          Step(
+            title: Text('Contact Information \n(please mark the best way to contact you)'),
+            content: Text('Select a service you need'),
+          ),
+          Step(
+            title: Text('Submit any photos in regards to the situation'),
+            content: Text('Select a service you need'),
+          ),
+          Step(
+            title: Text('Describe your situation and what you need done'),
+            content: Text('Select a service you need'),
+          ),
+        ],
+      ),
+    );
+  }
 }
