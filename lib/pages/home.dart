@@ -40,10 +40,6 @@ class HomePage extends StatelessWidget {
                   'Having an Issue?',
                 ),
               ),
-              const PopupMenuItem(
-                value: 3,
-                child: Text('Form'),
-              )
             ],
           ),
         ],
@@ -58,7 +54,31 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          _generalservices(),
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Not sure which service you need?',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const FormScreen()),
+                    );
+                  },
+                  child: const Text(
+                    'Describe it to us!',
+                    style: TextStyle(fontFamily: 'Poppins', fontStyle: FontStyle.italic),
+                  ),
+                ),
+              ],
+            ),
+          ),
           const SizedBox(
             height: 10,
           ),
@@ -66,29 +86,29 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
 
-  void onSelected(BuildContext context, int item) {
-    switch (item) {
-      case 0:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const GetQuote()),
-        );
-        break;
-      case 1:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const Login()),
-        );
-        break;
-      case 2:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const CustomerSupport()),
-        );
-        break;
-      case 3:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const FormScreen()),
-        );
-    }
+void onSelected(BuildContext context, int item) {
+  switch (item) {
+    case 0:
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const GetQuote()),
+      );
+      break;
+    case 1:
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const Login()),
+      );
+      break;
+    case 2:
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const CustomerSupport()),
+      );
+      break;
+    case 3:
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const FormScreen()),
+      );
   }
 }
 
@@ -231,17 +251,5 @@ Column _services() {
         ),
       )
     ],
-  );
-}
-
-Container _generalservices() {
-  return Container(
-    margin: const EdgeInsets.only(left: 20, right: 20),
-    child: const Row(children: [
-      Text(
-        'General Services',
-        style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
-      ),
-    ]),
   );
 }
