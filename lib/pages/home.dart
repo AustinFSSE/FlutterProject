@@ -86,15 +86,12 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
-              child: const Text(
-                'Follow these steps to complete your request',
-                style: TextStyle(fontFamily: 'Poppins', fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
               child: Column(
                 children: [
+                  const Text(
+                    'Follow these steps to complete your request',
+                    style: TextStyle(fontFamily: 'Poppins', fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   Stepper(
                     steps: const [
                       Step(
