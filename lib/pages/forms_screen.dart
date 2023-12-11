@@ -10,7 +10,6 @@ class FormScreen extends StatefulWidget {
 class _FormScreenState extends State<FormScreen> {
   late String _name;
   late String _email;
-  late String _password;
   late String _phoneNumber;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -38,19 +37,6 @@ class _FormScreenState extends State<FormScreen> {
         },
         onSaved: (value) {
           value = _email;
-        });
-  }
-
-  Widget _buildpassword() {
-    return TextFormField(
-        decoration: const InputDecoration(labelText: 'Password'),
-        validator: (value) {
-          if (value!.isEmpty) {
-            return "Password is required";
-          }
-        },
-        onSaved: (value) {
-          value = _password;
         });
   }
 
@@ -85,7 +71,6 @@ class _FormScreenState extends State<FormScreen> {
             children: [
               _buildName(),
               _buildEmail(),
-              _buildpassword(),
               _buildphoneNumber(),
               const SizedBox(height: 50),
               ElevatedButton(

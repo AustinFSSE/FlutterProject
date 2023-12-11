@@ -71,6 +71,11 @@ class HomePage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const FormScreen()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange[400],
+                    foregroundColor: Colors.black,
+                    elevation: 8,
+                  ),
                   child: const Text(
                     'Describe it to us!',
                     style: TextStyle(fontFamily: 'Poppins', fontStyle: FontStyle.italic),
