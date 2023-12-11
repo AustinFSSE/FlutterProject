@@ -93,23 +93,27 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
-              child: Stepper(
-                steps: const [
-                  Step(
-                    title: Text('Enter your First & Last Name'),
-                    content: Text('Select a service you need'),
-                  ),
-                  Step(
-                    title: Text('Contact Information \n(please mark the best way to contact you)'),
-                    content: Text('Select a service you need'),
-                  ),
-                  Step(
-                    title: Text('Submit any photos in regards to the situation'),
-                    content: Text('Select a service you need'),
-                  ),
-                  Step(
-                    title: Text('Describe your situation and what you need done'),
-                    content: Text('Select a service you need'),
+              child: Column(
+                children: [
+                  Stepper(
+                    steps: const [
+                      Step(
+                        title: Text('Enter your First & Last Name'),
+                        content: Text('Select a service you need'),
+                      ),
+                      Step(
+                        title: Text('Contact Information \n(please mark the best way to contact you)'),
+                        content: Text('Select a service you need'),
+                      ),
+                      Step(
+                        title: Text('Submit any photos in regards to the situation'),
+                        content: Text('Select a service you need'),
+                      ),
+                      Step(
+                        title: Text('Describe your situation and what you need done'),
+                        content: Text('Select a service you need'),
+                      ),
+                    ],
                   ),
                 ],
               ),
