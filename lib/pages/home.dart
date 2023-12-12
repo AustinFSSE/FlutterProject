@@ -5,6 +5,7 @@ import 'package:constructionapp/pages/get_a_quote.dart';
 import 'package:constructionapp/pages/forms_screen.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -13,6 +14,44 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int currentStep = 0;
+  continueStep() {
+    if (currentStep < 3) {
+      setState(() {
+        currentStep = currentStep + 1;
+      });
+    }
+  }
+
+  cancelStep() {
+    if (currentStep > 0) {
+      setState(() {
+        currentStep = currentStep - 1;
+      });
+    }
+  }
+
+  onStepTapped(int value) {
+    setState(() {
+      currentStep = value;
+    });
+  }
+
+  Widget controlsBuilder(context, details) {
+    return Row(
+      children: [
+        ElevatedButton(
+          onPressed: details.onStepContinue,
+          child: const Text('Next'),
+        ),
+        OutlinedButton(
+          onPressed: details.onStepCancel,
+          child: const Text('Back'),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,22 +137,35 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(fontFamily: 'Poppins', fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Stepper(
-                    steps: const [
+                    currentStep: currentStep,
+                    onStepContinue: continueStep,
+                    onStepCancel: cancelStep,
+                    onStepTapped: onStepTapped,
+                    controlsBuilder: controlsBuilder,
+                    steps: [
                       Step(
-                        title: Text('Enter your First & Last Name'),
-                        content: Text('Select a service you need'),
+                        title: const Text('Enter your First & Last Name'),
+                        content: const Text('Select a service you need'),
+                        isActive: currentStep >= 0,
+                        state: currentStep >= 0 ? StepState.complete : StepState.disabled,
                       ),
                       Step(
-                        title: Text('Contact Information \n(please mark the best way to contact you)'),
-                        content: Text('Select a service you need'),
+                        title: const Text('Contact Information \n(please mark the best way to contact you)'),
+                        content: const Text('Select a service you need'),
+                        isActive: currentStep >= 1,
+                        state: currentStep >= 1 ? StepState.complete : StepState.disabled,
                       ),
                       Step(
-                        title: Text('Submit any photos in regards to the situation'),
-                        content: Text('Select a service you need'),
+                        title: const Text('Submit any photos in regards to the situation'),
+                        content: const Text('Select a service you need'),
+                        isActive: currentStep >= 2,
+                        state: currentStep >= 2 ? StepState.complete : StepState.disabled,
                       ),
                       Step(
-                        title: Text('Describe your situation and what you need done'),
-                        content: Text('Select a service you need'),
+                        title: const Text('Describe your situation and what you need done'),
+                        content: const Text('Select a service you need'),
+                        isActive: currentStep >= 3,
+                        state: currentStep >= 3 ? StepState.complete : StepState.disabled,
                       ),
                     ],
                   ),
