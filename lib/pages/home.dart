@@ -40,13 +40,28 @@ class _HomePageState extends State<HomePage> {
   Widget controlsBuilder(context, details) {
     return Row(
       children: [
-        ElevatedButton(
-          onPressed: details.onStepContinue,
-          child: const Text('Next'),
+        Container(
+          margin: const EdgeInsets.only(left: 10, right: 10),
+          child: ElevatedButton(
+            onPressed: details.onStepContinue,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.deepOrange[400],
+              foregroundColor: Colors.black,
+              elevation: 4,
+            ),
+            child: const Text('Next'),
+          ),
         ),
-        OutlinedButton(
-          onPressed: details.onStepCancel,
-          child: const Text('Back'),
+        Container(
+          child: OutlinedButton(
+            onPressed: details.onStepCancel,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.deepOrange[400],
+              elevation: 8,
+              backgroundColor: Colors.black,
+            ),
+            child: const Text('Back'),
+          ),
         ),
       ],
     );
