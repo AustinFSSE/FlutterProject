@@ -52,16 +52,14 @@ class _HomePageState extends State<HomePage> {
             child: const Text('Next'),
           ),
         ),
-        Container(
-          child: OutlinedButton(
-            onPressed: details.onStepCancel,
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.deepOrange[400],
-              elevation: 8,
-              backgroundColor: Colors.black,
-            ),
-            child: const Text('Back'),
+        OutlinedButton(
+          onPressed: details.onStepCancel,
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.deepOrange[400],
+            elevation: 8,
+            backgroundColor: Colors.black,
           ),
+          child: const Text('Back'),
         ),
       ],
     );
@@ -211,10 +209,6 @@ void onSelected(BuildContext context, int item) {
         MaterialPageRoute(builder: (context) => const CustomerSupport()),
       );
       break;
-    case 3:
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const FormScreen()),
-      );
   }
 }
 
@@ -293,19 +287,28 @@ Column _services() {
       _locationValidation(),
       Container(
         margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
-        height: 125,
+        height: 100,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               children: [
-                Container(
-                  width: 50,
+                SizedBox(
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset('assets/icons/HVAC.svg'),
+                  width: 50,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SvgPicture.asset('assets/icons/HVAC.svg'),
+                    ),
                   ),
                 ),
                 const Text('HVAC')
@@ -313,13 +316,22 @@ Column _services() {
             ),
             Column(
               children: [
-                Container(
-                  width: 50,
+                SizedBox(
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset('assets/icons/plumbing.svg'),
+                  width: 50,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SvgPicture.asset('assets/icons/plumbing.svg'),
+                    ),
                   ),
                 ),
                 const Text('Plumbing')
@@ -327,13 +339,22 @@ Column _services() {
             ),
             Column(
               children: [
-                Container(
-                  width: 50,
+                SizedBox(
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset('assets/icons/roofing.svg'),
+                  width: 50,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SvgPicture.asset('assets/icons/roofing.svg'),
+                    ),
                   ),
                 ),
                 const Text('Roofing')
@@ -341,13 +362,22 @@ Column _services() {
             ),
             Column(
               children: [
-                Container(
-                  width: 50,
+                SizedBox(
                   height: 50,
-                  decoration: const BoxDecoration(color: Colors.transparent, shape: BoxShape.circle),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset('assets/icons/electrical.svg'),
+                  width: 50,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SvgPicture.asset('assets/icons/electrical.svg'),
+                    ),
                   ),
                 ),
                 const Text('Electrical')
