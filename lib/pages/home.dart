@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             child: const Text('Next'),
           ),
         ),
-        OutlinedButton(
+        ElevatedButton(
           onPressed: details.onStepCancel,
           style: OutlinedButton.styleFrom(
             foregroundColor: Colors.deepOrange[400],
@@ -69,37 +69,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.deepOrange[400],
         shadowColor: Colors.black,
         elevation: 4,
         title: const Text('Contracting, USA'),
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         actions: <Widget>[
-          IconButton(
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: IconButton(
               onPressed: () {
                 // do something
               },
-              icon: const Icon(Icons.share)),
-          PopupMenuButton(
-            onSelected: (item) => onSelected(context, item),
-            itemBuilder: (context) => [
-              const PopupMenuItem(
-                value: 0,
-                child: Text('Get a Quote'),
-              ),
-              const PopupMenuItem(
-                value: 1,
-                child: Text('Create an Account'),
-              ),
-              const PopupMenuItem(
-                value: 2,
-                child: Text(
-                  'Having an Issue?',
-                ),
-              ),
-            ],
+              icon: const Icon(Icons.share),
+            ),
           ),
         ],
+        leading: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: IconButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Login()),
+            ),
+            icon: const Icon(Icons.person),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -116,10 +112,13 @@ class _HomePageState extends State<HomePage> {
               margin: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [
-                  const Text(
-                    'Not sure which service you need?',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 10.0),
+                    child: Text(
+                      'Not sure which service you need?',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontFamily: 'Poppons', fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -201,7 +200,7 @@ void onSelected(BuildContext context, int item) {
       break;
     case 1:
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const Login()),
+        MaterialPageRoute(builder: (context) => Login()),
       );
       break;
     case 2:
