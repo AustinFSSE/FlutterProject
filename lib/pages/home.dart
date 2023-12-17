@@ -1,7 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:constructionapp/pages/customer_support.dart';
 import 'package:constructionapp/pages/login_page.dart';
-import 'package:constructionapp/pages/get_a_quote.dart';
 import 'package:constructionapp/pages/forms_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -188,26 +186,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-  }
-}
-
-void onSelected(BuildContext context, int item) {
-  switch (item) {
-    case 0:
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const GetQuote()),
-      );
-      break;
-    case 1:
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => Login()),
-      );
-      break;
-    case 2:
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const CustomerSupport()),
-      );
-      break;
   }
 }
 
