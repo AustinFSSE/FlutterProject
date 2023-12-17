@@ -1,6 +1,7 @@
 import 'package:constructionapp/components/login_text_field.dart';
 import 'package:constructionapp/components/sign_in.dart';
 import 'package:constructionapp/components/square_tile.dart';
+import 'package:constructionapp/pages/create_account.dart';
 import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +30,14 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     IconButton(
-                        onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const HomePage()),
-                            ),
-                        icon: const Icon(Icons.home_filled)),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      ),
+                      icon: const Icon(Icons.home_filled),
+                    ),
                   ],
                 ),
               ),
@@ -133,20 +137,31 @@ class Login extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text('Not a member?'),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text(
-                        'Create an Account',
-                        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: TextButton(
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CreateAccount(),
+                          ),
+                        ),
+                        child: const Text(
+                          'Create an Account',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                   ],

@@ -22,7 +22,11 @@ class SignIn extends StatelessWidget {
         child: const Center(
           child: Text(
             'Sign In',
-            style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
