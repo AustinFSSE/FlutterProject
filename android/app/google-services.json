@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020105057307",
+    "project_id": "authenticatorconstructionapp",
+    "storage_bucket": "authenticatorconstructionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020105057307:android:e0447b2985d26f3aa204be",
+        "android_client_info": {
+          "package_name": "com.example.dadsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkyVHALfbtA4iRCnIJOqX0plubhiAxj_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
