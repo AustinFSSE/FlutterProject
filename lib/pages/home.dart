@@ -91,7 +91,9 @@ class _HomePageState extends State<HomePage> {
           child: IconButton(
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const AuthPage()),
+              MaterialPageRoute(
+                builder: (context) => const AuthPage(),
+              ),
             ),
             icon: const Icon(Icons.person),
           ),

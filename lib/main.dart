@@ -1,4 +1,3 @@
-import 'package:constructionapp/pages/auth_page.dart';
 import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
