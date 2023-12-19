@@ -12,6 +12,7 @@ class _FormScreenState extends State<FormScreen> {
   late String _email;
   late String _phoneNumber;
 
+  // ignore: unused_field
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Widget _buildName() {
@@ -21,6 +22,7 @@ class _FormScreenState extends State<FormScreen> {
           if (value!.isEmpty) {
             return "Name is required";
           }
+          return null;
         },
         onSaved: (value) {
           value = _name;
@@ -34,6 +36,7 @@ class _FormScreenState extends State<FormScreen> {
           if (value!.isEmpty) {
             return "Email is required";
           }
+          return null;
         },
         onSaved: (value) {
           value = _email;
@@ -47,6 +50,7 @@ class _FormScreenState extends State<FormScreen> {
           if (value!.isEmpty) {
             return "Phone number is required";
           }
+          return null;
         },
         onSaved: (value) {
           value = _phoneNumber;
@@ -60,7 +64,7 @@ class _FormScreenState extends State<FormScreen> {
         elevation: 5,
         shadowColor: Colors.black,
         backgroundColor: Colors.blueGrey,
-        title: const Text('Form'),
+        title: const Text('General Form'),
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         centerTitle: true,
       ),

@@ -1,3 +1,5 @@
+import 'package:constructionapp/pages/auth_page.dart';
+import 'package:constructionapp/pages/hvac.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:constructionapp/pages/login_page.dart';
 import 'package:constructionapp/pages/forms_screen.dart';
@@ -89,7 +91,7 @@ class _HomePageState extends State<HomePage> {
           child: IconButton(
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Login()),
+              MaterialPageRoute(builder: (context) => const AuthPage()),
             ),
             icon: const Icon(Icons.person),
           ),
@@ -98,7 +100,39 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            _searchField(),
+            Container(
+              margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Need to login?',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontStyle: FontStyle.italic,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Login()),
+                      );
+                    },
+                    child: const Text(
+                      'Login NOW!',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(
               height: 10,
             ),
@@ -189,27 +223,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Container _searchField() {
-  return Container(
-    margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), boxShadow: [BoxShadow(color: const Color(0xff1D1617).withOpacity(0.5), spreadRadius: 1)]),
-    child: TextField(
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: Colors.white,
-        contentPadding: const EdgeInsets.all(8),
-        hintText: 'Search for services & More',
-        hintStyle: const TextStyle(color: Color(0xffDDDADA), fontSize: 14),
-        prefixIcon: Padding(
-          padding: const EdgeInsets.all(1),
-          child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-        ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: const BorderSide(color: Colors.black)),
-      ),
-    ),
-  );
-}
-
 Container _locationValidation() {
   // ignore: avoid_unnecessary_containers
   return Container(
@@ -232,14 +245,24 @@ Container _locationValidation() {
           ),
           child: TextField(
             decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.transparent,
-                contentPadding: const EdgeInsets.all(8),
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(1),
-                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+              filled: true,
+              fillColor: Colors.transparent,
+              contentPadding: const EdgeInsets.all(8),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(1),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.search),
                 ),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: const BorderSide(style: BorderStyle.solid, color: Colors.black))),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(35),
+                borderSide: const BorderSide(
+                  style: BorderStyle.solid,
+                  color: Colors.black,
+                ),
+              ),
+            ),
           ),
         ),
       ],
@@ -273,20 +296,25 @@ Column _services() {
                 SizedBox(
                   height: 50,
                   width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
+                  child: Builder(builder: (context) {
+                    return ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HVACForum()),
                       ),
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SvgPicture.asset('assets/icons/HVAC.svg'),
-                    ),
-                  ),
+                      style: ElevatedButton.styleFrom(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SvgPicture.asset('assets/icons/HVAC.svg'),
+                      ),
+                    );
+                  }),
                 ),
                 const Text('HVAC')
               ],

@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: const AuthPage(),
+      home: const HomePage(),
     );
   }
 }

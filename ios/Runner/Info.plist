@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+		<key>GIDServerClientID</key>
+		<string>[YOUR SERVER CLIENT ID]</string>
+		<key>GIDClientID</key>
+			<!-- TODO Replace this value: -->
+			<!-- Copied from GoogleService-Info.plist key CLIENT_ID -->
+			<string>[YOUR IOS CLIENT ID]</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- TODO Replace this value: -->
+				<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+				<string>com.googleusercontent.apps.1020105057307-jk2c6clrcrr6lqjc97h4vc0od8scd2ps</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

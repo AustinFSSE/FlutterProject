@@ -23,10 +23,12 @@ class LoginComplete extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('Logged in!')],
+          children: [
+            Text("This email is currently logged in:\n \t\t\t\t\t\t\t\t${user.email!}"),
+          ],
         ),
       ),
     );

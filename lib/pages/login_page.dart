@@ -1,23 +1,65 @@
+// ignore_for_file: use_build_context_synchronously
 import 'package:constructionapp/components/login_text_field.dart';
 import 'package:constructionapp/components/sign_in.dart';
 import 'package:constructionapp/components/square_tile.dart';
 import 'package:constructionapp/pages/create_account.dart';
 import 'package:constructionapp/pages/home.dart';
+import 'package:constructionapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  Login({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   // text editing controllers
   final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
 
   // sign user in method
   void signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
+    // show loading circle while waiting to login
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+    // try to sign in
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      // show error Message
+      showErrorMessage(e.code);
+    }
+  }
+
+  void showErrorMessage(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.deepOrange[400],
+          title: Text(
+            message,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -131,14 +173,20 @@ class Login extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquareTile(imagePath: 'assets/icons/google.png'),
-                    SizedBox(
+                    SquareTile(
+                      onTap: () => AuthService().signInWithGoogle(),
+                      imagePath: 'assets/icons/google.png',
+                    ),
+                    const SizedBox(
                       width: 20,
                     ),
-                    SquareTile(imagePath: 'assets/icons/apple.png'),
+                    SquareTile(
+                      onTap: () {},
+                      imagePath: 'assets/icons/apple.png',
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -159,7 +207,7 @@ class Login extends StatelessWidget {
                           onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CreateAccount(),
+                              builder: (context) => const CreateAccount(),
                             ),
                           ),
                           child: const Text(

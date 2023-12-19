@@ -1,4 +1,3 @@
-import 'package:constructionapp/pages/home.dart';
 import 'package:constructionapp/pages/login_complete.dart';
 import 'package:constructionapp/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,7 +15,7 @@ class AuthPage extends StatelessWidget {
           if (snapshot.hasData) {
             return LoginComplete();
           } else {
-            return Login();
+            return const Login();
           }
         },
       ),
