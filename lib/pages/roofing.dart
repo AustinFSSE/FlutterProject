@@ -2,21 +2,20 @@ import 'package:constructionapp/components/login_text_field.dart';
 import 'package:constructionapp/components/multi_text_line.dart';
 import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-class HVACForum extends StatefulWidget {
-  const HVACForum({super.key});
+class RoofingForum extends StatefulWidget {
+  const RoofingForum({super.key});
 
   @override
-  State<HVACForum> createState() => _HVACForumState();
+  State<RoofingForum> createState() => _RoofingForumState();
 }
 
-class _HVACForumState extends State<HVACForum> {
+class _RoofingForumState extends State<RoofingForum> {
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final emailController = TextEditingController();
   final descriptionController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +53,7 @@ class _HVACForumState extends State<HVACForum> {
                         Column(
                           children: [
                             Text(
-                              'HVAC Forum',
+                              'Roofing Forum',
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
@@ -88,7 +87,9 @@ class _HVACForumState extends State<HVACForum> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.asset(
-                        'assets/icons/HVAC.svg',
+                        'assets/icons/roofing.svg',
+                        height: 100,
+                        width: 100,
                       ),
                     ],
                   ),

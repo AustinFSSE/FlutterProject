@@ -1,5 +1,8 @@
 import 'package:constructionapp/pages/auth_page.dart';
+import 'package:constructionapp/pages/electrical.dart';
 import 'package:constructionapp/pages/hvac.dart';
+import 'package:constructionapp/pages/plumbing.dart';
+import 'package:constructionapp/pages/roofing.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:constructionapp/pages/login_page.dart';
 import 'package:constructionapp/pages/forms_screen.dart';
@@ -121,7 +124,9 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Login()),
+                        MaterialPageRoute(
+                          builder: (context) => const Login(),
+                        ),
                       );
                     },
                     child: Text(
@@ -310,7 +315,9 @@ Column _services() {
                     return ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const HVACForum()),
+                        MaterialPageRoute(
+                          builder: (context) => const HVACForum(),
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(
                         elevation: 4,
@@ -334,20 +341,27 @@ Column _services() {
                 SizedBox(
                   height: 50,
                   width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
+                  child: Builder(builder: (context) {
+                    return ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PlumbingForum(),
+                        ),
                       ),
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SvgPicture.asset('assets/icons/plumbing.svg'),
-                    ),
-                  ),
+                      style: ElevatedButton.styleFrom(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SvgPicture.asset('assets/icons/plumbing.svg'),
+                      ),
+                    );
+                  }),
                 ),
                 const Text('Plumbing')
               ],
@@ -357,20 +371,27 @@ Column _services() {
                 SizedBox(
                   height: 50,
                   width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
+                  child: Builder(builder: (context) {
+                    return ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RoofingForum(),
+                        ),
                       ),
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SvgPicture.asset('assets/icons/roofing.svg'),
-                    ),
-                  ),
+                      style: ElevatedButton.styleFrom(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SvgPicture.asset('assets/icons/roofing.svg'),
+                      ),
+                    );
+                  }),
                 ),
                 const Text('Roofing')
               ],
@@ -380,19 +401,28 @@ Column _services() {
                 SizedBox(
                   height: 50,
                   width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SvgPicture.asset('assets/icons/electrical.svg'),
-                    ),
+                  child: Builder(
+                    builder: (context) {
+                      return ElevatedButton(
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ElectricalForum(),
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset('assets/icons/electrical.svg'),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 const Text('Electrical')

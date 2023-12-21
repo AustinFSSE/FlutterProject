@@ -2,16 +2,16 @@ import 'package:constructionapp/components/login_text_field.dart';
 import 'package:constructionapp/components/multi_text_line.dart';
 import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-class HVACForum extends StatefulWidget {
-  const HVACForum({super.key});
+class ElectricalForum extends StatefulWidget {
+  const ElectricalForum({super.key});
 
   @override
-  State<HVACForum> createState() => _HVACForumState();
+  State<ElectricalForum> createState() => _ElectricalForumState();
 }
 
-class _HVACForumState extends State<HVACForum> {
+class _ElectricalForumState extends State<ElectricalForum> {
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final emailController = TextEditingController();
@@ -54,15 +54,12 @@ class _HVACForumState extends State<HVACForum> {
                         Column(
                           children: [
                             Text(
-                              'HVAC Forum',
+                              'Electrical Forum',
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                                 shadows: [
-                                  Shadow(
-                                    color: Colors.black.withOpacity(0.75),
-                                    blurRadius: 5,
-                                  ),
+                                  Shadow(color: Colors.black.withOpacity(0.75), blurRadius: 5),
                                 ],
                               ),
                             ),
@@ -88,7 +85,9 @@ class _HVACForumState extends State<HVACForum> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.asset(
-                        'assets/icons/HVAC.svg',
+                        'assets/icons/electrical.svg',
+                        height: 100,
+                        width: 100,
                       ),
                     ],
                   ),
@@ -158,6 +157,7 @@ class _HVACForumState extends State<HVACForum> {
                     onPressed: () => {},
                     style: ElevatedButton.styleFrom(
                       elevation: 15,
+                      foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
