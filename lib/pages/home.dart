@@ -114,6 +114,7 @@ class _HomePageState extends State<HomePage> {
                       fontStyle: FontStyle.italic,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
                   TextButton(
@@ -123,12 +124,19 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (context) => const Login()),
                       );
                     },
-                    child: const Text(
+                    child: Text(
                       'Login NOW!',
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
+                        color: Colors.deepOrange[400],
+                        shadows: [
+                          Shadow(
+                            color: Colors.black.withOpacity(0.75),
+                            blurRadius: 3,
+                          ),
+                        ],
                       ),
                     ),
                   ),
