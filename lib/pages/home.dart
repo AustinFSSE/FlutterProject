@@ -117,8 +117,8 @@ Container _locationValidation() {
   );
 }
 
-Wrap _services() {
-  return Wrap(
+Column _services() {
+  return Column(
     children: [
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,7 +136,20 @@ Wrap _services() {
           _locationValidation(),
           Container(
             margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
-            child: const ServicesOffered(),
+            child: const Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'General',
+                      style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                ServicesOffered(),
+              ],
+            ),
           )
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:constructionapp/components/unique_service.dart';
+import 'package:constructionapp/pages/door.dart';
 import 'package:constructionapp/pages/electrical.dart';
 import 'package:constructionapp/pages/hvac.dart';
 import 'package:constructionapp/pages/plumbing.dart';
@@ -15,7 +16,9 @@ class ServicesOffered extends StatefulWidget {
 class _ServicesOfferedState extends State<ServicesOffered> {
   @override
   Widget build(BuildContext context) {
-    return Wrap(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -65,10 +68,44 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                   iconpath: 'assets/icons/electrical.svg',
                   elevation: 4,
                 ),
-                const Text('Electrical')
+                const Text('Electrical'),
               ],
             ),
           ],
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Installation',
+                style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  ServiceWidget(
+                    iconsize: 50,
+                    forum: const DoorServiceForum(),
+                    size: 50,
+                    iconpath: 'assets/icons/door.svg',
+                    elevation: 4,
+                  ),
+                  const Text(
+                    'Doors',
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );
