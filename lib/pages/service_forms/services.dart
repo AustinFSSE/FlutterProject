@@ -1,9 +1,9 @@
 import 'package:constructionapp/components/unique_service.dart';
-import 'package:constructionapp/pages/door.dart';
-import 'package:constructionapp/pages/electrical.dart';
-import 'package:constructionapp/pages/hvac.dart';
-import 'package:constructionapp/pages/plumbing.dart';
-import 'package:constructionapp/pages/roofing.dart';
+import 'package:constructionapp/pages/service_forms/door.dart';
+import 'package:constructionapp/pages/service_forms/electrical.dart';
+import 'package:constructionapp/pages/service_forms/hvac.dart';
+import 'package:constructionapp/pages/service_forms/plumbing.dart';
+import 'package:constructionapp/pages/service_forms/roofing.dart';
 import 'package:flutter/material.dart';
 
 class ServicesOffered extends StatefulWidget {

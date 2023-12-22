@@ -4,7 +4,7 @@ import 'package:constructionapp/components/sign_in.dart';
 import 'package:constructionapp/components/square_tile.dart';
 import 'package:constructionapp/pages/create_account.dart';
 import 'package:constructionapp/pages/home.dart';
-import 'package:constructionapp/services/auth_service.dart';
+import 'package:constructionapp/backend%20services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

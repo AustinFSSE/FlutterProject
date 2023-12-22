@@ -1,13 +1,5 @@
-import 'package:constructionapp/components/unique_service.dart';
-import 'package:constructionapp/pages/auth_page.dart';
-import 'package:constructionapp/pages/electrical.dart';
-import 'package:constructionapp/pages/hvac.dart';
-import 'package:constructionapp/pages/plumbing.dart';
-import 'package:constructionapp/pages/roofing.dart';
-import 'package:constructionapp/pages/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:constructionapp/pages/login_page.dart';
-import 'package:constructionapp/pages/forms_screen.dart';
+import 'package:constructionapp/backend%20services/auth_page.dart';
+import 'package:constructionapp/pages/service_forms/services.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
