@@ -1,5 +1,4 @@
 import 'package:constructionapp/components/login_text_field.dart';
-import 'package:constructionapp/components/multi_text_line.dart';
 import 'package:constructionapp/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -142,14 +141,7 @@ class _HVACForumState extends State<HVACForum> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 360,
-                        child: MultiLineTextField(
-                          hintText: 'Describe your service request....',
-                        ),
-                      ),
-                    ],
+                    children: [],
                   ),
                 ),
                 Padding(
