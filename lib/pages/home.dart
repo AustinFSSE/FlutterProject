@@ -1,5 +1,5 @@
-import 'package:constructionapp/backend%20services/auth_page.dart';
-import 'package:constructionapp/pages/service_forms/services.dart';
+import '../backend%20services/auth_page.dart' show AuthPage;
+import 'service_forms/services.dart' show ServicesOffered;
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
