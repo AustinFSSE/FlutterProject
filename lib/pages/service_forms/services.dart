@@ -35,7 +35,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                     size: 50,
                     iconpath: 'assets/icons/HVAC.svg',
                   ),
-                  const Text('HVAC')
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    child: const Text(
+                      'HVAC',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -50,7 +61,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                     iconpath: 'assets/icons/plumbing.svg',
                     elevation: 4,
                   ),
-                  const Text('Plumbing')
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    child: const Text(
+                      'Plumbing',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -65,7 +87,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                     iconpath: 'assets/icons/roofing.svg',
                     elevation: 4,
                   ),
-                  const Text('Roofing'),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    child: const Text(
+                      'Roofing',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -80,7 +113,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                     iconpath: 'assets/icons/electrical.svg',
                     elevation: 4,
                   ),
-                  const Text('Electrical'),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    child: const Text(
+                      'Electrical',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -114,9 +158,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/door.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Doors',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Doors',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -131,9 +184,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/window.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Windows',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Windows',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -148,9 +210,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/furniture.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Furniture',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Furniture',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -165,9 +236,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/shelves.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Shelves',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Shelves',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -206,9 +286,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                         iconpath: 'assets/icons/door.svg',
                         elevation: 4,
                       ),
-                      const Text(
-                        'Outdoor\nFurniture',
-                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 25),
+                        child: const Text(
+                          'Outdoor Furniture',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -224,9 +313,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/window.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Outdoor\n\t\tSheds',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Outdoor Sheds',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -241,11 +339,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/furniture.svg',
                       elevation: 4,
                     ),
-                    const Center(
-                      child: Text(
-                        'Above Ground\nFirepits',
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Above Ground Firepits',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
@@ -260,9 +365,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/shelves.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Small\nPorches',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Small Porches',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -297,9 +411,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/door.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Bathrooms',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Bathrooms',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -314,9 +437,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/window.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Kitchens',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Kitchens',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -331,9 +463,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/furniture.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Cabinets',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Cabinets',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -348,9 +489,18 @@ class _ServicesOfferedState extends State<ServicesOffered> {
                       iconpath: 'assets/icons/shelves.svg',
                       elevation: 4,
                     ),
-                    const Text(
-                      'Office/Bedrooms',
-                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                      child: const Text(
+                        'Office/Bedrooms',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),

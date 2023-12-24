@@ -91,7 +91,7 @@ Container _locationValidation() {
                 padding: const EdgeInsets.all(1),
                 child: IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.search),
+                  icon: const Icon(Icons.location_on_sharp),
                 ),
               ),
               border: OutlineInputBorder(
