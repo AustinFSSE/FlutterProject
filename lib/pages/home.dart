@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 itemBuilder: (context, index){
                   return Container(
-                    margin: const EdgeInsets.only(top: 20, bottom: 20),
+                    margin: const EdgeInsets.only(top: 20, bottom: 25),
                    height: generalServices[index].size,
                    width: generalServices[index].size,
                    decoration: BoxDecoration(
@@ -105,16 +105,20 @@ class _HomePageState extends State<HomePage> {
                                },
                                child: Padding(
                                  padding: const EdgeInsets.all(5.0),
-                                 child: SvgPicture.asset(
+                                 child: Column(
+                             children: [
+                               SvgPicture.asset(
                                    generalServices[index].iconpath,
                                    height: generalServices[index].iconsize,
                                    width: generalServices[index].iconsize,
                                  ),
+                                 Text(generalServices[index].text, style: const TextStyle(fontFamily: 'Poppins', fontSize: 12, fontWeight: FontWeight.bold),),
+                                 ],
                                ),
+                             ),
                              );
                           },
                         ),
-                       Text(generalServices[index].text)
                       ],
                    ),
                   );
@@ -141,7 +145,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(left: 20, right: 20),
               itemBuilder: (context, index){
                 return Container(
-                  margin: const EdgeInsets.only(top: 20, bottom: 20),
+                  margin: const EdgeInsets.only(top: 20, bottom: 25),
                   height: fixtureServices[index].size,
                   width: fixtureServices[index].size,
                   decoration: BoxDecoration(
@@ -172,19 +176,26 @@ class _HomePageState extends State<HomePage> {
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: SvgPicture.asset(
+                              child: Column(
+                          children: [
+                            SvgPicture.asset(
                                 fixtureServices[index].iconpath,
                                 height: fixtureServices[index].iconsize,
                                 width: fixtureServices[index].iconsize,
                               ),
+                            Text(
+                              fixtureServices[index].text,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  fontFamily: 'Poppins'),
                             ),
+                              ],
+                            ),
+                          ),
                           );
                         },
                       ),
-                      Padding(
-                          padding: EdgeInsets.all(5.0),
-                          child: Text(fixtureServices[index].text),
-                      )
                     ],
                   ),
                 );
