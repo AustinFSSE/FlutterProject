@@ -67,14 +67,14 @@ class _HomePageState extends State<HomePage> {
 
           // General Services
           SizedBox(
-            height: 160,
+            height: 150,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 shrinkWrap: true,
                 itemBuilder: (context, index){
                   return Container(
-                    margin: const EdgeInsets.only(top: 20, bottom: 25),
+                    margin: const EdgeInsets.only(top: 15, bottom: 25),
                    height: generalServices[index].size,
                    width: generalServices[index].size,
                    decoration: BoxDecoration(
@@ -139,13 +139,13 @@ class _HomePageState extends State<HomePage> {
             ),
           const SizedBox(height: 5,),
           SizedBox(
-            height: 180,
+            height: 170,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 20, right: 20),
               itemBuilder: (context, index){
                 return Container(
-                  margin: const EdgeInsets.only(top: 20, bottom: 25),
+                  margin: const EdgeInsets.only(top: 15, bottom: 25),
                   height: fixtureServices[index].size,
                   width: fixtureServices[index].size,
                   decoration: BoxDecoration(
