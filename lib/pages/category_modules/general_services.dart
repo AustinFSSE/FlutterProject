@@ -65,6 +65,16 @@ class GeneralServices {
           text: 'Electrical'
         )
     );
+    generalServices.add(
+        GeneralServices(
+            iconsize: 75,
+            forum: const HVACForum(),
+            size: 75,
+            iconpath: 'assets/icons/garage.svg',
+            elevation: 4,
+            text: 'Garage'
+        )
+    );
     return generalServices;
   }
 

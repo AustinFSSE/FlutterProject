@@ -1,5 +1,6 @@
 import 'package:constructionapp/pages/category_modules/fixtures_services.dart';
 import 'package:constructionapp/pages/category_modules/general_services.dart';
+import 'package:constructionapp/pages/category_modules/installation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../backend%20services/auth_page.dart' show AuthPage;
@@ -16,9 +17,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<GeneralServices> generalServices = [];
   List<FixtureServices> fixtureServices = [];
+  List<InstallationServices> installationServices = [];
   void _getInfo() {
     generalServices = GeneralServices.getGeneralServices();
     fixtureServices = FixtureServices.getFixtureServices();
+    installationServices = InstallationServices.getInstallationServices();
   }
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
@@ -66,6 +70,13 @@ class _HomePageState extends State<HomePage> {
 
 
           // General Services
+          const Padding(
+            padding: EdgeInsets.only(left: 20, top: 10),
+            child: Text(
+              'General',
+              style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
           SizedBox(
             height: 150,
             child: ListView.separated(
@@ -127,17 +138,16 @@ class _HomePageState extends State<HomePage> {
                 itemCount: generalServices.length,
               ),
             ),
-          const SizedBox(height: 15,),
 
           // Fixture Services
           const Padding(
-              padding: EdgeInsets.only(left: 20, top: 10),
-              child: Text(
-                'Fixtures',
-                style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+            padding: EdgeInsets.only(left: 20, top: 10),
+            child: Text(
+              'Fixtures',
+              style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
             ),
-          const SizedBox(height: 5,),
+          ),
+
           SizedBox(
             height: 170,
             child: ListView.separated(
@@ -177,22 +187,97 @@ class _HomePageState extends State<HomePage> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Column(
-                          children: [
-                            SvgPicture.asset(
-                                fixtureServices[index].iconpath,
-                                height: fixtureServices[index].iconsize,
-                                width: fixtureServices[index].iconsize,
+                                children: [
+                                  SvgPicture.asset(
+                                    fixtureServices[index].iconpath,
+                                    height: fixtureServices[index].iconsize,
+                                    width: fixtureServices[index].iconsize,
+                                  ),
+                                  Text(
+                                    fixtureServices[index].text,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        fontFamily: 'Poppins'),
+                                  ),
+                                ],
                               ),
-                            Text(
-                              fixtureServices[index].text,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                  fontFamily: 'Poppins'),
                             ),
-                              ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(width: 30),
+              itemCount: fixtureServices.length,
+            ),
+          ),
+
+          // Installation Services
+          const Padding(
+            padding: EdgeInsets.only(left: 20, top: 10),
+            child: Text(
+              'Installation',
+              style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(
+            height: 170,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              itemBuilder: (context, index){
+                return Container(
+                  margin: const EdgeInsets.only(top: 15, bottom: 25),
+                  height: installationServices[index].size,
+                  width: installationServices[index].size,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade400,
+                    borderRadius: BorderRadius.circular(15),
+                    shape: BoxShape.rectangle,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(5, 5),
+                        blurRadius: 10.0,
+                        spreadRadius: 5.0,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Builder(
+                        builder: (context){
+                          return GestureDetector(
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => installationServices[index].forum,
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Column(
+                                children: [
+                                  SvgPicture.asset(
+                                    installationServices[index].iconpath,
+                                    height: installationServices[index].iconsize,
+                                    width: installationServices[index].iconsize,
+                                  ),
+                                  Text(
+                                    installationServices[index].text,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13,
+                                        fontFamily: 'Poppins'),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
                           );
                         },
                       ),
@@ -205,6 +290,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ],
+      ),
       ),
     );
   }
@@ -274,22 +360,6 @@ Column _services() {
             height: 15,
           ),
           _locationValidation(),
-          Container(
-            margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
-            child: const Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'General',
-                      style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          )
         ],
       ),
     ],
