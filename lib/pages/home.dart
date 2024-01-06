@@ -1,5 +1,8 @@
+import 'package:constructionapp/pages/category_modules/fixtures_services.dart';
+import 'package:constructionapp/pages/category_modules/general_services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import '../backend%20services/auth_page.dart' show AuthPage;
-import 'service_forms/services.dart' show ServicesOffered;
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -11,8 +14,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<GeneralServices> generalServices = [];
+  List<FixtureServices> fixtureServices = [];
+  void _getInfo() {
+    generalServices = GeneralServices.getGeneralServices();
+    fixtureServices = FixtureServices.getFixtureServices();
+  }
   @override
   Widget build(BuildContext context) {
+    _getInfo();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -45,18 +55,145 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          _services(),
+          const SizedBox(height: 15,),
+
+
+          // General Services
+          SizedBox(
+            height: 160,
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                shrinkWrap: true,
+                itemBuilder: (context, index){
+                  return Container(
+                    margin: const EdgeInsets.only(top: 20, bottom: 20),
+                   height: generalServices[index].size,
+                   width: generalServices[index].size,
+                   decoration: BoxDecoration(
+                       color: Colors.grey.shade400,
+                       borderRadius: BorderRadius.circular(15),
+                       shape: BoxShape.rectangle,
+                       boxShadow: const [
+                         BoxShadow(
+                           color: Colors.black,
+                           offset: Offset(5, 5),
+                           blurRadius: 10.0,
+                           spreadRadius: 5.0,
+                         ),
+                       ],
+                   ),
+                   child: Column(
+                     children: [
+                       Builder(
+                           builder: (context){
+                             return GestureDetector(
+                               onTap: (){
+                                 Navigator.push(
+                                   context,
+                                   MaterialPageRoute(
+                                     builder: (context) => generalServices[index].forum,
+                                   ),
+                                 );
+                               },
+                               child: Padding(
+                                 padding: const EdgeInsets.all(5.0),
+                                 child: SvgPicture.asset(
+                                   generalServices[index].iconpath,
+                                   height: generalServices[index].iconsize,
+                                   width: generalServices[index].iconsize,
+                                 ),
+                               ),
+                             );
+                          },
+                        ),
+                       Text(generalServices[index].text)
+                      ],
+                   ),
+                  );
+                  },
+                separatorBuilder: (context, index) => const SizedBox(width: 30),
+                itemCount: generalServices.length,
+              ),
             ),
-            _services(),
-            const SizedBox(
-              height: 10,
+          const SizedBox(height: 15,),
+
+          // Fixture Services
+          const Padding(
+              padding: EdgeInsets.only(left: 20, top: 10),
+              child: Text(
+                'Fixtures',
+                style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+              ),
             ),
-          ],
-        ),
+          const SizedBox(height: 5,),
+          SizedBox(
+            height: 180,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              itemBuilder: (context, index){
+                return Container(
+                  margin: const EdgeInsets.only(top: 20, bottom: 20),
+                  height: fixtureServices[index].size,
+                  width: fixtureServices[index].size,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade400,
+                    borderRadius: BorderRadius.circular(15),
+                    shape: BoxShape.rectangle,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(5, 5),
+                        blurRadius: 10.0,
+                        spreadRadius: 5.0,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Builder(
+                        builder: (context){
+                          return GestureDetector(
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => fixtureServices[index].forum,
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: SvgPicture.asset(
+                                fixtureServices[index].iconpath,
+                                height: fixtureServices[index].iconsize,
+                                width: fixtureServices[index].iconsize,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                      Padding(
+                          padding: EdgeInsets.all(5.0),
+                          child: Text(fixtureServices[index].text),
+                      )
+                    ],
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(width: 30),
+              itemCount: fixtureServices.length,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -139,7 +276,6 @@ Column _services() {
                     ),
                   ],
                 ),
-                ServicesOffered(),
               ],
             ),
           )

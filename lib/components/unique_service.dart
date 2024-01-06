@@ -23,8 +23,8 @@ class ServiceWidget extends StatelessWidget {
       width: size,
       child: Builder(
         builder: (context) {
-          return ElevatedButton(
-            onPressed: () {
+          return GestureDetector(
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -32,13 +32,6 @@ class ServiceWidget extends StatelessWidget {
                 ),
               );
             },
-            style: ElevatedButton.styleFrom(
-              elevation: elevation,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
-              ),
-              padding: EdgeInsets.zero,
-            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: SvgPicture.asset(
